@@ -1,0 +1,8 @@
+product_store\product\Product.class
+product_store\product\ProductRepository.class
+product_store\product\ProductApplication.class
+product_store\product\ProductParser.class
+product_store\product\Product$ProductBuilder.class
+product_store\product\ProductModel.class
+product_store\product\ProductService.class
+product_store\product\ProductResource.class
