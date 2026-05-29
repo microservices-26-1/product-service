@@ -14,9 +14,8 @@ public class ProductResource implements ProductController {
     private ProductService productService;
 
     @Override
-    public ResponseEntity<Void> create(ProductDTO dto) {
+    public ResponseEntity<ProductDTO> create(ProductDTO dto) {
         final Product product = ProductParser.to(dto);
-
         final Product created = productService.create(product);
         return ResponseEntity.created(
             ServletUriComponentsBuilder
@@ -24,7 +23,7 @@ public class ProductResource implements ProductController {
                 .path("/{id}")
                 .buildAndExpand(created.id())
                 .toUri()
-        ).build();
+        ).body(ProductParser.to(created));
     }
 
     @Override
